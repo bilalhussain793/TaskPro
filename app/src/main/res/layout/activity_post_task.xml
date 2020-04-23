@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PostTask">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="10dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:background="@drawable/et1"
+                    android:paddingTop="3dp">
+
+                    <EditText
+                        android:id="@+id/tit"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:gravity="center|left"
+                        android:hint="Task title"
+                        android:inputType="text"
+                        android:paddingLeft="5dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:background="@drawable/et1"
+                    android:paddingTop="3dp">
+                    <EditText
+                        android:id="@+id/desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:paddingTop="5dp"
+                        android:gravity="top|left"
+                        android:textSize="14dp"
+                        android:background="#00000000"
+                        android:hint="Describe Task in detail"
+                        android:inputType="textMultiLine"
+                        android:maxLines="20"
+                        android:minLines="1"
+                        android:paddingLeft="5dp"
+                        android:scrollbars="vertical" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/radio"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:padding="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Task Category : "
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp" />
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:prompt="@string/spinner_title" />
+            </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="4dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/radio"
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingBottom="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="18sp"
+                        android:text="Task Type :   "/>
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/rd_group">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:text="Physical"
+                            android:drawableTint="@color/blue"
+                            android:id="@+id/phsical"
+                            android:textColor="#F44336"
+                            android:checked="true"
+                            android:textSize="13dp"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:text="Online"
+                            android:id="@+id/online"
+                            android:drawableTint="@color/blue"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13dp"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:background="@drawable/et1"
+            android:paddingTop="3dp">
+
+            <EditText
+                android:id="@+id/Budget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center|left"
+                android:hint="Budget"
+                android:inputType="number"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textSize="14dp"
+                android:paddingLeft="5dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/et1"
+                    android:paddingTop="3dp">
+                    <EditText
+                        android:id="@+id/location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textSize="14dp"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:gravity="center|left"
+                        android:hint="Location"
+                        android:paddingLeft="5dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="User ID :"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/usernames"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="#00000000"
+                        android:gravity="center|left"
+                        android:textColor="#000"
+                        android:hint="User ID"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="15dp"
+                        android:paddingLeft="5dp" />
+                </LinearLayout>
+
+
+
+
+                <Button
+                    android:id="@+id/btn_sign_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_btn_red"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Post"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="14dp" />
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>
