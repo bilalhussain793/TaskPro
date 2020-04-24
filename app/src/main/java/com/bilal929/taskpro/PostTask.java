@@ -80,20 +80,6 @@ public class PostTask extends AppCompatActivity {
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
 
-//        final Spinner spinner1 =  findViewById(R.id.spinner1);
-//        List<String> categories1 = new ArrayList<String>();
-//        categories1.add("Select Type of Task");
-//        categories1.add("Physical");
-//        categories1.add("Online");
-//
-//
-//
-//        ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(PostTask.this, android.R.layout.simple_spinner_item, categories1);
-//        // Drop down layout style - list view with radio button
-//        dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        // attaching data adapter to spinner
-//        spinner1.setAdapter(dataAdapter1);
-
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -182,7 +168,7 @@ public class PostTask extends AppCompatActivity {
             @Override
             public void onResponse(String s) {
                 Firebase reference = new Firebase("https://notify-38a1e.firebaseio.com/users/"+Username+"/tasks");
-                Firebase reference2 = new Firebase("https://notify-38a1e.firebaseio.com/users/tasks/"+Title+" posted by "+Username+"in"+type);
+                Firebase reference2 = new Firebase("https://notify-38a1e.firebaseio.com/tasks/"+Title+" iposted byi "+Username+" iprci "+Budget+" ilocationi "+Location);
 
                 if(s.equals("null")) {
                     reference.child(Title).child("title").setValue(Title);

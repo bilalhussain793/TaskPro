@@ -27,7 +27,7 @@ TextView tv_name,tv_phone,tv_email;
 
         Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/notify-38a1e.appspot.com" +
                 "/o/ProfileImages%2F"+UserData.userid+"?alt=media&token=47eb0bd8-8ff0-4422-ac46-400aafa50caf")
-                .into(profileImage);
+                .transform(new CircleTransform()).into(profileImage);
         tv_name.setText(UserData.username);
         tv_phone.setText(UserData.userContact);
         tv_email.setText(UserData.userEmail);

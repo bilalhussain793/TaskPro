@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff"
+    android:showDividers="end"
+    android:divider="@drawable/divider_drawable"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_btn_white"
+        android:padding="2dp">
+
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/task_img"/>
+
+        <LinearLayout
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/task_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Do a task for me in lahore"
+                android:textColor="#000"
+                android:textSize="12dp"
+                android:lines="1"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/location"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:id="@+id/location_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:text="Lahore,pakistan"
+                    android:textColor="#000"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/prc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Rs 5000"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:layout_height="30dp"
+                android:layout_width="wrap_content"
+                android:text="Chat"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_btn_red"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                android:id="@+id/cht"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

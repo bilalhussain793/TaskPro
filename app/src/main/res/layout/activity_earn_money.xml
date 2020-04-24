@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:weightSum="3"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginTop="15dp"
             android:orientation="horizontal">
             <LinearLayout
@@ -43,7 +43,7 @@
                         android:layout_height="wrap_content"
                         android:text="Gardening"
                         android:gravity="center"
-                        android:textSize="12dp"
+                        android:textSize="10dp"
                         android:layout_marginTop="5dp"
                         android:textColor="@color/white"/>
                 </LinearLayout>
@@ -53,7 +53,7 @@
                     android:gravity="center"
                     android:padding="5dp"
                     android:background="@drawable/ico"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="15dp"
                     android:orientation="vertical">
                     <ImageView
                         android:layout_width="60dp"
@@ -67,7 +67,7 @@
                         android:text="Delivery"
                         android:gravity="center"
                         android:layout_marginTop="5dp"
-                        android:textSize="12dp"
+                        android:textSize="10dp"
                         android:textColor="@color/white"/>
                 </LinearLayout>
             </LinearLayout>
@@ -96,7 +96,7 @@
                         android:layout_height="wrap_content"
                         android:text="Cleaning"
                         android:gravity="center"
-                        android:textSize="12dp"
+                        android:textSize="10dp"
                         android:layout_marginTop="5dp"
                         android:textColor="@color/white"/>
                 </LinearLayout>
@@ -106,7 +106,7 @@
                     android:gravity="center"
                     android:padding="5dp"
                     android:background="@drawable/ico"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="15dp"
                     android:orientation="vertical">
                     <ImageView
                         android:layout_width="60dp"
@@ -119,7 +119,7 @@
                         android:layout_height="wrap_content"
                         android:text="IT Services"
                         android:gravity="center"
-                        android:textSize="12dp"
+                        android:textSize="10dp"
                         android:layout_marginTop="5dp"
                         android:textColor="@color/white"/>
                 </LinearLayout>
@@ -148,7 +148,7 @@
                         android:layout_height="wrap_content"
                         android:text="Home Services"
                         android:gravity="center"
-                        android:textSize="12dp"
+                        android:textSize="10dp"
                         android:layout_marginTop="5dp"
                         android:padding="-2dp"
                         android:textColor="@color/white"/>
@@ -159,7 +159,7 @@
                     android:padding="5dp"
                     android:background="@drawable/ico"
                     android:gravity="center"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="15dp"
                     android:orientation="vertical">
                     <ImageView
                         android:layout_width="60dp"
@@ -171,7 +171,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Others"
-                        android:textSize="12dp"
+                        android:textSize="10dp"
                         android:gravity="center"
                         android:layout_marginTop="5dp"
                         android:textColor="@color/white"/>
@@ -182,28 +182,27 @@
     </ScrollView>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:text="Recently Posted Tasks"
         android:padding="3dp"
         android:textColor="@color/white"
         android:background="@drawable/editstyle"
-        android:textSize="20dp"
+        android:textSize="16dp"
+        android:gravity="center"
         android:textStyle="bold" />
     <LinearLayout
-        android:layout_width="210dp"
+        android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_gravity="center"
         android:background="@color/colorPrimaryDark"
-        android:layout_marginLeft="5dp"
         android:layout_marginTop="2dp"/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:id="@+id/lv"/>
 
 
 </LinearLayout>

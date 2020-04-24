@@ -64,7 +64,7 @@ public class Login extends AppCompatActivity {
                     StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
                         @Override
                         public void onResponse(String s) {
-                            Toast.makeText(Login.this, ""+s, Toast.LENGTH_LONG).show();
+                           // Toast.makeText(Login.this, ""+s, Toast.LENGTH_LONG).show();
                             if(s.equals("null")){
                                 Toast.makeText(Login.this, "user not found", Toast.LENGTH_LONG).show();
                             }
