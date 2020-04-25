@@ -7,7 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -26,6 +28,7 @@ import java.util.Iterator;
 
 public class EarnMoney extends AppCompatActivity {
     ListView listView;
+    ImageView gardening_iv;
     ArrayList<String> title=new ArrayList<String>();
     ArrayList<String> userid=new ArrayList<String>();
     ArrayList<String> location=new ArrayList<String>();
@@ -41,8 +44,9 @@ public class EarnMoney extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_earn_money);
 
-
+            gardening_iv=findViewById(R.id.gardening_iv);
         listView=findViewById(R.id.lv);
+
 //        title.add("ususu");
 //        location.add("dmks");
 //        userid.add("bilal123");
@@ -50,7 +54,7 @@ public class EarnMoney extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
             @Override
             public void onResponse(String s) {
-                Toast.makeText(EarnMoney.this, ""+s, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(EarnMoney.this, ""+s, Toast.LENGTH_SHORT).show();
                 doOnSuccess(s);
             }
         },new Response.ErrorListener(){
@@ -79,11 +83,15 @@ public class EarnMoney extends AppCompatActivity {
                     String P=key.substring(key.indexOf("iprci")).substring(6);
 
                     title.add(ttl);
+                    UserData.title.add(ttl);
                     userid.add(I.substring(0,I.indexOf(" iprci ")));
-//                    task name and ID extracted above
+                    UserData.userid_post.add(I.substring(0,I.indexOf(" iprci ")));
+
                     location.add(L);
+                    UserData.location.add(L);
                     price.add("Rs: "+P.substring(0,P.indexOf(" ilocationi")));
-                    Toast.makeText(this, ""+key, Toast.LENGTH_SHORT).show();
+                    UserData.price.add("Rs: "+P.substring(0,P.indexOf(" ilocationi")));
+
                     totalTasks++;
                 }
             }
@@ -96,8 +104,15 @@ public class EarnMoney extends AppCompatActivity {
 
         }
         else{
-            listView.setAdapter(new TaskAdapter(EarnMoney.this,title,location,userid,price));
-       //   usersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, al));
+            gardening_iv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(EarnMoney.this,TaskList.class));
+                }
+            });
+            TaskAdapter taskAdapter=new TaskAdapter(EarnMoney.this,title,location,userid,price);
+            listView.setAdapter(taskAdapter);
+
         }
     }
 }

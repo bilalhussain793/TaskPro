@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:id="@+id/ln_cat"
             android:weightSum="3"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="15dp"
@@ -37,6 +38,7 @@
                         android:layout_height="60dp"
                         android:padding="3dp"
                         android:tint="@color/white"
+                        android:id="@+id/gardening_iv"
                         android:src="@drawable/gardening"/>
                     <TextView
                         android:layout_width="100dp"
@@ -185,7 +187,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Recently Posted Tasks"
+        android:text="Posted Tasks"
         android:padding="3dp"
         android:textColor="@color/white"
         android:background="@drawable/editstyle"
@@ -202,6 +204,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:divider="#00000000"
         android:id="@+id/lv"/>
 
 

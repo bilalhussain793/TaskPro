@@ -3,6 +3,7 @@ package com.bilal929.taskpro;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
@@ -13,10 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
@@ -47,11 +51,11 @@ public class TaskAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView = inflater.inflate(R.layout.task_layout, null, true);
 
-
-        title = rowView.findViewById(R.id.task_name);
-        loc = rowView.findViewById(R.id.location_tv);
-        price = rowView.findViewById(R.id.prc);
-        iv = rowView.findViewById(R.id.task_img);
+        title=rowView.findViewById(R.id.task_name);
+        loc=rowView.findViewById(R.id.location_tv);
+        price=rowView.findViewById(R.id.prc);
+        iv=rowView.findViewById(R.id.task_img);
+        Button open=rowView.findViewById(R.id.cht);
 
         title.setText(maintitle.get(position));
         loc.setText(loc1.get(position));
@@ -60,6 +64,15 @@ public class TaskAdapter extends ArrayAdapter<String> {
                 "/o/ProfileImages%2F" + userId.get(position) + "?alt=media&token=47eb0bd8-8ff0-4422-ac46-400aafa50caf")
                 .transform(new CircleTransform())
                 .into(iv);
+
+        open.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, ""+maintitle.get(position), Toast.LENGTH_SHORT).show();
+                v.getContext().startActivity(new Intent(v.getContext(),ShowTask.class));
+                UserData.position=position;
+            }
+        });
 
         return rowView;
 

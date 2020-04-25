@@ -12,7 +12,10 @@
         android:roundIcon="@drawable/task_pro_ico"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PostTask"></activity>
+        <activity android:name=".Chat"></activity>
+        <activity android:name=".ShowTask" />
+        <activity android:name=".TaskList" />
+        <activity android:name=".PostTask" />
         <activity android:name=".EarnMoney" />
         <activity android:name=".Home" />
         <activity android:name=".SignUp" />
