@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class TaskList extends AppCompatActivity {
     ListView lv;
     TaskAdapter taskAdapter;
+    UserData userData=new UserData();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,5 +32,10 @@ public class TaskList extends AppCompatActivity {
                 Toast.makeText(TaskList.this, ""+UserData.userid_post.get(position), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public void  onBackPressed(){
+        taskAdapter.clear();
+        userData.clear();
+        finish();
     }
 }

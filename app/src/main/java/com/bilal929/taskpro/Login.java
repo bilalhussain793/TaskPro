@@ -56,7 +56,7 @@ public class Login extends AppCompatActivity {
                     password.setError("can't be blank");
                 }
                 else{
-                    String url = "https://notify-38a1e.firebaseio.com/users.json";
+                    String url = UserData.URL+"/users.json";
                     final ProgressDialog pd = new ProgressDialog(Login.this);
                     pd.setMessage("Loading...");
                     pd.show();
@@ -107,7 +107,6 @@ public class Login extends AppCompatActivity {
                     RequestQueue rQueue = Volley.newRequestQueue(Login.this);
                     rQueue.add(request);
                 }
-
             }
         });
 

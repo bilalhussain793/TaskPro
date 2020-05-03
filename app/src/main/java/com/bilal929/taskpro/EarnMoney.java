@@ -28,7 +28,7 @@ import java.util.Iterator;
 
 public class EarnMoney extends AppCompatActivity {
     ListView listView;
-    ImageView gardening_iv;
+    ImageView gardening_iv,clean_iv,home_iv,deliver_iv,it_iv,other_iv;
     ArrayList<String> title=new ArrayList<String>();
     ArrayList<String> userid=new ArrayList<String>();
     ArrayList<String> location=new ArrayList<String>();
@@ -36,36 +36,173 @@ public class EarnMoney extends AppCompatActivity {
     ArrayList<String> k_key=new ArrayList<String>();
     ArrayList<String> task_type=new ArrayList<String>();
     ArrayList<String> task_desc=new ArrayList<String>();
-    String url = "https://notify-38a1e.firebaseio.com/tasks.json";
+    String url;
     int totalTasks = 0;
-   // ProgressDialog pd;
+    ProgressDialog pd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_earn_money);
+        final UserData userData=new UserData();
+        pd = new ProgressDialog(EarnMoney.this);
+        pd.setMessage("Loading...");
 
-            gardening_iv=findViewById(R.id.gardening_iv);
+        gardening_iv=findViewById(R.id.gardening_iv);
+        clean_iv=findViewById(R.id.clean_iv);
+        home_iv=findViewById(R.id.home_iv);
+        deliver_iv=findViewById(R.id.deliver_iv);
+        it_iv=findViewById(R.id.it_iv);
+        other_iv=findViewById(R.id.other_iv);
+
+        gardening_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                pd.show();
+                url = "https://notify-38a1e.firebaseio.com/tasks/gardening.json";
+                UserData.ttype="gardening";
+                StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String s) {
+                        // Toast.makeText(EarnMoney.this, ""+s, Toast.LENGTH_SHORT).show();
+                        doOnSuccess(s);
+                    }
+                },new Response.ErrorListener(){
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        System.out.println("" + volleyError);
+                    }
+                });
+
+                RequestQueue rQueue = Volley.newRequestQueue(EarnMoney.this);
+                rQueue.add(request);
+            }
+        });
+        clean_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pd.show();
+                url = "https://notify-38a1e.firebaseio.com/tasks/cleaning.json";
+                UserData.ttype="cleaning";
+                StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String s) {
+                        // Toast.makeText(EarnMoney.this, ""+s, Toast.LENGTH_SHORT).show();
+                        doOnSuccess(s);
+                    }
+                },new Response.ErrorListener(){
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        System.out.println("" + volleyError);
+                    }
+                });
+
+                RequestQueue rQueue = Volley.newRequestQueue(EarnMoney.this);
+                rQueue.add(request);
+            }
+        });
+        deliver_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                pd.show();
+                url = "https://notify-38a1e.firebaseio.com/tasks/delivery.json";
+                UserData.ttype="delivery";
+                StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String s) {
+                        // Toast.makeText(EarnMoney.this, ""+s, Toast.LENGTH_SHORT).show();
+                        doOnSuccess(s);
+                    }
+                },new Response.ErrorListener(){
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        System.out.println("" + volleyError);
+                    }
+                });
+
+                RequestQueue rQueue = Volley.newRequestQueue(EarnMoney.this);
+                rQueue.add(request);
+            }
+        });
+        home_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                pd.show();
+                url = "https://notify-38a1e.firebaseio.com/tasks/home service.json";
+                UserData.ttype="home service";
+                StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String s) {
+                        // Toast.makeText(EarnMoney.this, ""+s, Toast.LENGTH_SHORT).show();
+                        doOnSuccess(s);
+                    }
+                },new Response.ErrorListener(){
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        System.out.println("" + volleyError);
+                    }
+                });
+
+                RequestQueue rQueue = Volley.newRequestQueue(EarnMoney.this);
+                rQueue.add(request);
+            }
+        });
+        it_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                pd.show();
+                url = "https://notify-38a1e.firebaseio.com/tasks/it service.json";
+                UserData.ttype="it service";
+                StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String s) {
+                        // Toast.makeText(EarnMoney.this, ""+s, Toast.LENGTH_SHORT).show();
+                        doOnSuccess(s);
+                    }
+                },new Response.ErrorListener(){
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        System.out.println("" + volleyError);
+                    }
+                });
+
+                RequestQueue rQueue = Volley.newRequestQueue(EarnMoney.this);
+                rQueue.add(request);
+            }
+        });
+        other_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pd.show();
+                url = "https://notify-38a1e.firebaseio.com/tasks/other.json";
+                UserData.ttype="other";
+                StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String s) {
+                        // Toast.makeText(EarnMoney.this, ""+s, Toast.LENGTH_SHORT).show();
+                        doOnSuccess(s);
+                    }
+                },new Response.ErrorListener(){
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        System.out.println("" + volleyError);
+                    }
+                });
+
+                RequestQueue rQueue = Volley.newRequestQueue(EarnMoney.this);
+                rQueue.add(request);
+            }
+        });
         listView=findViewById(R.id.lv);
 
 //        title.add("ususu");
 //        location.add("dmks");
 //        userid.add("bilal123");
 //        price.add("2333");
-        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
-            @Override
-            public void onResponse(String s) {
-               // Toast.makeText(EarnMoney.this, ""+s, Toast.LENGTH_SHORT).show();
-                doOnSuccess(s);
-            }
-        },new Response.ErrorListener(){
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-                System.out.println("" + volleyError);
-            }
-        });
 
-        RequestQueue rQueue = Volley.newRequestQueue(EarnMoney.this);
-        rQueue.add(request);
     }
     public void doOnSuccess(String s){
         try {
@@ -77,6 +214,7 @@ public class EarnMoney extends AppCompatActivity {
             while(i.hasNext()){
                 key = i.next().toString();
                 if(!key.equals("")) {
+                    UserData.k_key.add(key);
                     String ttl=key.substring(0,key.indexOf("iposted"));
                     String I=key.substring(key.indexOf("iposted byi")).substring(12);
                     String L=key.substring(key.indexOf("ilocationi")).substring(11);
@@ -98,20 +236,19 @@ public class EarnMoney extends AppCompatActivity {
 
         } catch (JSONException e) {
             e.printStackTrace();
+            pd.dismiss();
         }
 
         if(totalTasks <=1){
 
         }
         else{
-            gardening_iv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(EarnMoney.this,TaskList.class));
-                }
-            });
+
             TaskAdapter taskAdapter=new TaskAdapter(EarnMoney.this,title,location,userid,price);
-            listView.setAdapter(taskAdapter);
+
+            startActivity(new Intent(EarnMoney.this,TaskList.class));
+            pd.dismiss();
+//            listView.setAdapter(taskAdapter);
 
         }
     }

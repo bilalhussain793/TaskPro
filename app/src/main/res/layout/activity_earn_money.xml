@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_gravity="center"
     tools:context=".EarnMoney">
 
 
@@ -17,8 +18,8 @@
             android:padding="10dp"
             android:id="@+id/ln_cat"
             android:weightSum="3"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -62,6 +63,7 @@
                         android:layout_height="60dp"
                         android:tint="@color/white"
                         android:padding="3dp"
+                        android:id="@+id/deliver_iv"
                         android:src="@drawable/pandd"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -92,6 +94,7 @@
                         android:layout_height="60dp"
                         android:padding="3dp"
                         android:tint="@color/white"
+                        android:id="@+id/clean_iv"
                         android:src="@drawable/cleaning"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -115,6 +118,7 @@
                         android:layout_height="60dp"
                         android:tint="@color/white"
                         android:padding="5dp"
+                        android:id="@+id/it_iv"
                         android:src="@drawable/it"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -144,6 +148,7 @@
                         android:layout_height="60dp"
                         android:padding="3dp"
                         android:tint="@color/white"
+                        android:id="@+id/home_iv"
                         android:src="@drawable/homeservice"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -168,6 +173,7 @@
                         android:layout_height="60dp"
                         android:tint="@color/white"
                         android:padding="3dp"
+                        android:id="@+id/other_iv"
                         android:src="@drawable/others"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -189,6 +195,7 @@
         android:layout_gravity="center"
         android:text="Posted Tasks"
         android:padding="3dp"
+        android:visibility="gone"
         android:textColor="@color/white"
         android:background="@drawable/editstyle"
         android:textSize="16dp"
@@ -198,12 +205,14 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_gravity="center"
+        android:visibility="gone"
         android:background="@color/colorPrimaryDark"
         android:layout_marginTop="2dp"/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
+        android:visibility="gone"
         android:divider="#00000000"
         android:id="@+id/lv"/>
 

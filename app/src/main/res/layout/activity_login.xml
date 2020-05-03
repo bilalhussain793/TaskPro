@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#858585"
     tools:context=".Login">
 
     <ImageView
@@ -38,58 +39,80 @@
             android:orientation="vertical"
             android:paddingBottom="5dp">
 
-<com.google.android.material.textfield.TextInputLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/et1"
-    android:layout_marginBottom="10dp"
-    android:textColorHint="@color/colorPrimaryDark"
-    android:paddingTop="3dp"
-    app:hintTextColor="@color/colorPrimaryDark">
-    <EditText
-        android:id="@+id/et_user"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="3dp"
-        android:hint="UserID"
-        android:textColorHint="@color/blue"
-        android:inputType="textEmailAddress"
-        android:lines="1"
-        android:text="bilal123"
-        android:textStyle="bold"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18dp" />
-</com.google.android.material.textfield.TextInputLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="7dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:paddingTop="3dp"
+
+                    app:hintTextColor="@color/colorPrimaryDark">
+                    <EditText
+                        android:id="@+id/et_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="3dp"
+                        android:hint="UserID"
+                        android:inputType="textEmailAddress"
+                        android:textStyle="bold"
+                        android:text="bilal123"
+                        android:lines="1"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                app:cardCornerRadius="7dp">
 
 
-<com.google.android.material.textfield.TextInputLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:hintTextColor="@color/colorPrimaryDark"
-    android:textColorHint="@color/colorPrimaryDark"
-    android:paddingTop="3dp"
-    android:background="@drawable/et1">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/colorPrimaryDark"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:paddingTop="3dp">
 
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        android:paddingTop="3dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        android:textColorHint="@color/blue"
-        android:lines="1"
-        android:textStyle="bold"
-        android:text="12345678"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18dp" />
-</com.google.android.material.textfield.TextInputLayout>
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:paddingTop="3dp"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:paddingLeft="10dp"
+                        android:textColorHint="@color/blue"
+                        android:lines="1"
+                        android:text="12345678"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
 
 
 <!--            <CheckBox-->
@@ -117,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/colorPrimaryDark"
+                android:background="@drawable/button_rect"
                 android:text="Login"
                 android:textAllCaps="false"
                 android:textColor="@color/white"

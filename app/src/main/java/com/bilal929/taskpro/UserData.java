@@ -9,9 +9,11 @@ public class UserData {
     static String password = "";
     static String username = "";
     static String chatWith = "";
+    static String chatName = "";
     static String accountType="";
     static String userEmail = "";
     static String userContact="";
+    static String URL="https://notify-38a1e.firebaseio.com";
 
     // section 2 for the posted tasks in earn_money list
 
@@ -23,6 +25,18 @@ public class UserData {
     static ArrayList<String> task_type=new ArrayList<String>();
     static ArrayList<String> task_desc=new ArrayList<String>();
     static int position=0;
+    static String ttype="";
+
+
+    void clear(){
+        title.clear();
+        userid_post.clear();
+        location.clear();
+        price.clear();
+        k_key.clear();
+        task_type.clear();
+        task_desc.clear();
+    }
 
 
 

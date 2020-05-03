@@ -162,13 +162,13 @@ public class PostTask extends AppCompatActivity {
         pd.setMessage("Loading...");
         pd.show();
 
-        String url = "https://notify-38a1e.firebaseio.com/tasks.json";
+        String url = "https://notify-38a1e.firebaseio.com/tasks/"+type_of_task+".json";
 
         final StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
             @Override
             public void onResponse(String s) {
                 Firebase reference = new Firebase("https://notify-38a1e.firebaseio.com/users/"+Username+"/tasks");
-                Firebase reference2 = new Firebase("https://notify-38a1e.firebaseio.com/tasks/"+Title+" iposted byi "+Username+" iprci "+Budget+" ilocationi "+Location);
+                Firebase reference2 = new Firebase("https://notify-38a1e.firebaseio.com/tasks/"+type+"/"+Title+" iposted byi "+Username+" iprci "+Budget+" ilocationi "+Location);
 
                 if(s.equals("null")) {
                     reference.child(Title).child("title").setValue(Title);
@@ -185,6 +185,9 @@ public class PostTask extends AppCompatActivity {
                     reference2.child("task_type").setValue(type);
                     reference2.child("location").setValue(Location);
                     reference2.child("posted by").setValue(Username);
+                    reference2.child("username").setValue(UserData.username);
+                    reference2.child("phone").setValue(UserData.userContact);
+
                     Toast.makeText(PostTask.this, "Task Posted Successfully", Toast.LENGTH_LONG).show();
                 }
                 else {
@@ -206,6 +209,8 @@ public class PostTask extends AppCompatActivity {
                             reference2.child("task_type").setValue(type);
                             reference2.child("location").setValue(Location);
                             reference2.child("posted by").setValue(Username);
+                            reference2.child("username").setValue(UserData.username);
+                            reference2.child("phone").setValue(UserData.userContact);
                             Toast.makeText(PostTask.this, "Task Posted Successfully", Toast.LENGTH_LONG).show();
 
                         } else {
